@@ -1,46 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<header>
+    <img src="logo.png" alt="Website Logo">
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+<section class="hero">
+    <div class="background-image"></div>
+    <h1>Welcome to Our Site</h1>
+</section>
 
-<body>
-    <div class="contact-form-container">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="fullName">Full Name <span>*</span></label>
-                <input type="text" id="fullName" name="fullName" required>
-                <span class="error" id="nameError"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email Address <span>*</span></label>
-                <input type="email" id="email" name="email" required>
-                <span class="error" id="emailError"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone">
-                <span class="error" id="phoneError"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message <span>*</span></label>
-                <textarea id="message" name="message" required minlength="100"></textarea>
-                <span class="error" id="messageError"></span>
-            </div>
-
-            <button type="submit">Submit</button>
-        </form>
+<section class="our-work">
+    <h2 class="title">Our Work</h2>
+    <div class="work-gallery">
+        <!-- Images go here -->
     </div>
+</section>
 
-    <script src="script.js"></script>
-</body>
+<section class="features">
+    <h2 class="title">Features & Services</h2>
+    <!-- Content goes here -->
+</section>
 
-</html>
+<section class="reviews">
+    <h2 class="title">Customer Reviews</h2>
+    <!-- Reviews go here -->
+</section>
+
+<section class="contact">
+    <h2 class="title">Join Our Newsletter</h2>
+    <!-- Contact form or newsletter signup goes here -->
+</section>
