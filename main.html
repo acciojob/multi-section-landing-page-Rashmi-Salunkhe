@@ -1,55 +1,43 @@
-<header>
-    <a id="logo" href="#">
-        <img src="logo.png" alt="Website Logo">
-    </a>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+<!DOCTYPE html>
 
+<html>
 
-<section class="hero">
-    <div class="background-image"></div>
-    <h1>Responsive Flexbox Template</h1>
-</section>
+<head>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-<section class="our-work">
-    <h2 class="title">Some of our work</h2>
-    <ul class="grid">
-        <li><img src="work1.jpg" alt="Work 1"></li>
-        <li><img src="work2.jpg" alt="Work 2"></li>
-        <li><img src="work3.jpg" alt="Work 3"></li>
-        <li><img src="work4.jpg" alt="Work 4"></li>
-    </ul>
-</section>
+<body>
+	
+	<form method="post">
+		<label for="name">Name:</label><br>
+		<input type="text" id="name" name="name" required><br>
 
-<section class="features">
-    <h2 class="title">Features and services</h2>
-    <ul class="grid">
-        <li>Feature 1</li>
-        <li>Feature 2</li>
-        <li>Feature 3</li>
-    </ul>
-</section>
+		<br><label for="email">Email:</label><br>
+		<input type="email" id="email" name="email" required><br>
 
-<section class="reviews">
-    <h2 class="title">What others say:</h2>
-    <p class="quote">"This is a great service!"</p>
-    <p class="quote">"Highly recommended!"</p>
-    <p class="quote">"Outstanding experience!"</p>
-</section>
+		<br><label for="number">Phone Number:</label><br>
+		<input type="number" id="number" name="number" required><br>
 
-<section class="contact">
-    <h2 class="title">Join our newsletter</h2>
-    <form id="contactForm">
-        <input type="email" id="email" placeholder="Your email">
-        <input type="submit" value="Subscribe now" class="btn">
-    </form>
-</section>
+		<br><label for="message">Message:</label><br>
+		<textarea id="message" name="message" required rows="4" cols="25" maxlength="100"></textarea><br>
+		
+		<br><button id="btn">Submit</button>
+	</form>
+	<div id="validation">
+		<h1 id="heading-p">Check and validate the data</h1>
+		<p id="name-p">Name : </p>
+		<p id="email-p">Email :</p>
+		<p id="number-p">Phone Number :</p>
+		<p id="message-p">Message :</p>
+		<button id="popup-btn">Validate</button>
+		<button id="close"><i class="fa-solid fa-xmark"></i></button>
+	</div>
+	
+	<!-- the entire body must be written by student -->
+    <script type="text/javascript" src="./script.js">
+</script>
 
+</body>
 
+</html>
