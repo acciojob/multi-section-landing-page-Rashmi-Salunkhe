@@ -1,66 +1,57 @@
 //your JS code here. If required.
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+let names = document.getElementById('name');
+let email = document.getElementById('email');
+let phoneNumber = document.getElementById('number');
+let message = document.getElementById('message');
+let submitBtn = document.getElementById('btn');
+let validationForm = document.getElementById('validation');
 
-    // Clear any previous errors
-    clearErrors();
+function validateInput(){
+	return names.value !== "" && email.value !== "" && phoneNumber.value !== "" && message.value !== "";
+}
 
-    let isValid = true;
+submitBtn.disabled = true;
 
-    // Validate Full Name
-    const fullName = document.getElementById('fullName').value.trim();
-    if (fullName === '') {
-        showError('nameError', 'Full Name is required.');
-        isValid = false;
-    }
+function showSubmitBtn(){
+	submitBtn.disabled = !validateInput();
+}
+	
+names.addEventListener("input", showSubmitBtn);
+email.addEventListener("input", showSubmitBtn);
+phoneNumber.addEventListener("input", showSubmitBtn);
+message.addEventListener("input", showSubmitBtn);
+	
+validationForm.style.display = "none";
 
-    // Validate Email Address
-    const email = document.getElementById('email').value.trim();
-    if (!validateEmail(email)) {
-        showError('emailError', 'Please enter a valid email address.');
-        isValid = false;
-    }
+let nameOnValidForm = document.getElementById('name-p');
+let emailOnValidForm = document.getElementById('email-p');
+let numberOnValidForm = document.getElementById('number-p');
+let messageOnValidForm = document.getElementById('message-p');
 
-    // Validate Phone Number (Optional)
-    const phone = document.getElementById('phone').value.trim();
-    if (phone !== '' && !validatePhone(phone)) {
-        showError('phoneError', 'Please enter a valid phone number.');
-        isValid = false;
-    }
 
-    // Validate Message
-    const message = document.getElementById('message').value.trim();
-    if (message.length < 100) {
-        showError('messageError', 'Message must be at least 100 characters long.');
-        isValid = false;
-    }
+submitBtn.addEventListener('click', function(event){
+	
+	event.preventDefault();
+	validationForm.style.display = "block";
+	nameOnValidForm.innerHTML = names.value;
+	emailOnValidForm.innerHTML = email.value;
+	numberOnValidForm.innerHTML = phoneNumber.value;
+	messageOnValidForm.innerHTML = message.value;
 
-    if (isValid) {
-        // Form is valid, handle form submission here
-        alert('Form submitted successfully!');
-        this.reset(); // Reset the form
-    }
 });
 
-function showError(elementId, message) {
-    const errorElement = document.getElementById(elementId);
-    errorElement.textContent = message;
-    errorElement.style.display = 'block';
-}
+let closeBtn = document.getElementById('close');
+closeBtn.addEventListener("click", function(){
+	validationForm.style.display = "none";
+});
 
-function clearErrors() {
-    document.querySelectorAll('.error').forEach(el => {
-        el.textContent = '';
-        el.style.display = 'none';
-    });
-}
+let validateBtn = document.getElementById('popup-btn');
 
-function validateEmail(email) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-}
-
-function validatePhone(phone) {
-    const phonePattern = /^[0-9]{10}$/;
-    return phonePattern.test(phone);
-}
+validateBtn.addEventListener("click", function(){
+	validationForm.style.display = "none";
+	alert("Form submitted sucessfully");
+	names.value = "";
+	email.value = "";
+	phoneNumber.value = "";
+	message.value = "";
+})
